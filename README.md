@@ -1,5 +1,5 @@
 # ML-project
-A project for face recognition
+A Machine Learning project to recognize Hand-writing.
 Team name = ML-coders
 team members :-
 1.Palash Agarwal
