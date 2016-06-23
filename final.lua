@@ -18,9 +18,9 @@ validationset = {
 }
 --print (validationset.data:size()) 
 model = nn.Sequential()
-model:add(nn.Linear(4,100))
+model:add(nn.Linear(4,70))
 model:add(nn.Tanh())
-model:add(nn.Linear(100,50))
+model:add(nn.Linear(70,50))
 model:add(nn.Tanh())
 model:add(nn.Linear(50,1))
 model:add(nn.Tanh())
@@ -28,10 +28,10 @@ model:add(nn.Tanh())
 criterion = nn.MSECriterion()
 
 sgd_params = {
-	learningRate = 1e-3,
-	learningRateDecay =2*(1e-3),
-	weightDecay = 1e-4,
-	momentum = 1e-3,
+	learningRate =0.09 ,
+	learningRateDecay =2*0.0001,
+	weightDecay = 1e-3,
+	momentum = 1e-4,
 }
 
 x, dl_dx = model:getParameters()
@@ -121,7 +121,7 @@ eval = function(dataset,batch_size)
 	return count/dataset.size
 end
 
-max_iters = 200
+max_iters = 100
 
 
 do
