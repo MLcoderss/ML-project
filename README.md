@@ -116,7 +116,7 @@ Our website is : http://mlcoderss.github.io/ML-project/
    [Dataset.txt]: <https://github.com/MLcoderss/ML-project/blob/master/Dataset.txt>
    [data repository]: <https://github.com/MLcoderss/ML-project/blob/master/sp500hst.txt>
    [stock_function.lua]: <https://github.com/MLcoderss/ML-project/blob/master/stock_function.lua>
-   [core_function.lua]: (https://github.com/MLcoderss/ML-project/blob/master/core_function.lua)
+   [core_function.lua]: <https://github.com/MLcoderss/ML-project/blob/master/core_function.lua>
    [optim]: <https://github.com/torch/optim>
    [optim.sgd]: <http://torch.ch/docs/five-simple-examples.html#4-using-the-optim-package>
    [final_output.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
