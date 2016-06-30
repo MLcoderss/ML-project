@@ -33,8 +33,55 @@ we learned from:-
   * Machine learning In Torch from [rnduja blog]
 
 ## **Description of the Project**
-We here will describe how our code works. Our main code can be found [here].
-Our data set has been imported from [Historical Stock Data].
+We here will describe how our code works. Our main code can be found [here](https://github.com/MLcoderss/ML-project/blob/master/core_function.lua).
+Our data set has been imported from :- http://pages.swcp.com/stocks/
+
+In total we have three main file:
+  * [core_function.lua]
+  * [stock_function.lua]
+  * [Dataset.txt] which contains 20,232 different stocks
+
+   ##### Dataset description
+   The Dataset has been cropped from other [data repository] (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset.We have ignored dates and tickers as they are useless for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
+   ```sh
+   fullset = database("Dataset.txt")	.
+trainset = {
+	size = 10232,
+	data = fullset['datainput'][{{1,10232}}],
+	label = fullset['dataoutput'][{{1,10232}}]
+}
+validationset = {
+	size = 10000,
+	data = fullset['datainput'][{{10233,20232}}],
+	label = fullset['dataoutput'][{{10233,20232}}]
+}
+   ```
+   Here 'database' is an user defined function in file [stock_function.lua] which helps us to convert [Dataset.txt] to convert into a Double Tensor so that we can apply arithmetic operations on it.
+   
+After that we will describe our model:
+```sh
+model = nn.Sequential()		
+model:add(nn.Linear(4,70))
+model:add(nn.Tanh())
+model:add(nn.Linear(70,50))
+model:add(nn.Tanh())
+model:add(nn.Linear(50,1))
+model:add(nn.Tanh())
+```
+Our model contains two hidden layer.One has 70 neurons and other one has 50 neurons. After trying for at least one day we finally reached on this model to minimize the error. 
+
+Loss function we have used is MseCriterion. One can find its detail [here](https://github.com/torch/nn/blob/master/doc/criterion.md).
+```sh
+criterion = nn.MSECriterion() 
+```
+Then we have used [optim] module.Here we will be using [optim.sgd].
+
+After that comes "step" function which just train training set. We have used stochastic graident.So we have broken our trainingset into batches of size 200.The code is very simple. Any one can understand it by seeing it.
+
+Then we have "eval" function which gives us accuracy calculated after testing validation set with the parameters we got after training trainingset in "step" function.
+
+After iterating the same datasets for 200 times we have saved the final parameters of model in other file /model.net. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_ouput.lua] and [graph_output.lua].
+
 
 
 
@@ -52,9 +99,12 @@ Our data set has been imported from [Historical Stock Data].
    [neural networks]: <http://neuralnetworksanddeeplearning.com/>
    [Michael Nelson]: <http://michaelnielsen.org/>
    [rnduja blog]: <http://rnduja.github.io/2015/10/13/torch-mnist/>
-   [here]: <https://github.com/MLcoderss/ML-project/blob/master/core_function.lua>
-   [Historical Stock Data]: <http://pages.swcp.com/stocks/>
-   
-   
-   
+   [Dataset.txt]: <https://github.com/MLcoderss/ML-project/blob/master/Dataset.txt>
+   [data repository]: <https://github.com/MLcoderss/ML-project/blob/master/sp500hst.txt>
+   [stock_function.lua]: <https://github.com/MLcoderss/ML-project/blob/master/stock_function.lua>
+   [core_function.lua]: (https://github.com/MLcoderss/ML-project/blob/master/core_function.lua)
+   [optim]: <https://github.com/torch/optim>
+   [optim.sgd]: <http://torch.ch/docs/five-simple-examples.html#4-using-the-optim-package>
+   [final_ouput.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
+   [graph_output.lua]: <>
    
