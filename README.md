@@ -1,29 +1,26 @@
-# Machine Learning Project
+# Machine learning Project
 ## Stock Market Predictor
-### Key Points :
-  - This project predicts the closing value of a stock in a market
-   - We, the students of IIT Kanpur , under the guidance of programming club coded it.
-   - The project was aimed at learning the algorithms of machine learning.
+### Summarised Description
+>This Project predicts closing value of a stock of a particular day in a market, given its value of opening, maximum, minimum and volume of a stock of that day.
+* The project has been coded in Torch.
+* This project implements the basic algorithms of machine learning
 
-Website of our project is :- http://mlcoderss.github.io/ML-project/
+### Installation of Torch
+This project uses Torch , a language particularly for Machine Learning. Torch can be installed easily on linux from terminal. It can't work on windows.
 
-The project has been coded in [Torch].
+* Link for installation guide:- http://torch.ch/docs/getting-started.html
 
-## Summary of the Project
-Our project aims to calculate the closing value of that day of a stock in stock market. It takes opening , high , low and  total volume of the day as an input to predict the desired ouput. It has implemented basic algorithms of machine learning.
+Other module needed can be installed by using below commands.
+```sh
+$ luarocks install nn
+$ luarocks install itorch
+$ luarocks install image
+$ luarocks install optim
+```
+Also Dataset needed to build the project can be found [here](http://pages.swcp.com/stocks/).
 
-   - accuracy achieved = 65% approx. in 150 epochs
-   - It also shows the error variation on graph
-   - u can also save the graph and the model parameters.
-
-#### Our project in my eyes:-
-
->We are a group of four people who learned machine learning from various sites and courses.
-> With the effort of everyone in the group we could give a shape to this Project.
-> Now we can proudly say that we have learnes machine learnin and used our summers fruitfully.
-
-We also thanks to coordinators of the Programming club, without them we would have not been able to do any thing. Now we also include our helpful sites and courses
-we learned from:-
+### Helpful Tutorials , Books and Links
+Here is the name and links of important persons and other important stuffs.
   * Respected [Andrew NG] Sir and his course on [Coursera]
   * Book for [neural networks] written by [Michael Nelson]
   * Python from http://learnpython.org/
@@ -31,18 +28,16 @@ we learned from:-
   * Torch from https://github.com/torch/torch7/wiki/Cheatsheet
   * Lua from http://tylerneylon.com/a/learn-lua/
   * Machine learning In Torch from [rnduja blog]
-
-## **Description of the Project**
-We here will describe how our code works. Our main code can be found [here](https://github.com/MLcoderss/ML-project/blob/master/core_function.lua).
-Our data set has been imported from :- http://pages.swcp.com/stocks/
-
-In total we have three main file:
+### Description
+In total we have five main files:
   * [core_function.lua]
   * [stock_function.lua]
   * [Dataset.txt] which contains 20,232 different stocks
+  * [final_output.lua]
+  * [graph_output.lua]
 
    ##### Dataset description
-   The Dataset has been cropped from other [data repository] (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset.We have ignored dates and tickers as they are useless for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
+   The Dataset has been cropped from other [data repository] (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
    ```sh
    fullset = database("Dataset.txt")	.
 trainset = {
@@ -58,44 +53,60 @@ validationset = {
    ```
    Here 'database' is an user defined function in file [stock_function.lua] which helps us to convert [Dataset.txt] to convert into a Double Tensor so that we can apply arithmetic operations on it.
    
-After that we will describe our model:
-```sh
-model = nn.Sequential()		
-model:add(nn.Linear(4,70))
-model:add(nn.Tanh())
-model:add(nn.Linear(70,50))
-model:add(nn.Tanh())
-model:add(nn.Linear(50,1))
-model:add(nn.Tanh())
-```
-Our model contains two hidden layer.One has 70 neurons and other one has 50 neurons. After trying for at least one day we finally reached on this model to minimize the error. 
+   ##### Description of Model
+   Our model contains two hidden layer.One has 70 neurons and other one has 50 neurons.
+   ```sh
+    model = nn.Sequential()		
+    model:add(nn.Linear(4,70))
+    model:add(nn.Tanh())
+    model:add(nn.Linear(70,50))
+    model:add(nn.Tanh())
+    model:add(nn.Linear(50,1))
+    model:add(nn.Tanh())
+   ```
+   This model applies [Tanh](https://github.com/torch/nn/blob/master/doc/transfer.md#tanh) function. 
+   Tanh is defined as f(x) = (exp(x)-exp(-x))/(exp(x)+exp(-x))
 
-Loss function we have used is MseCriterion. One can find its detail [here](https://github.com/torch/nn/blob/master/doc/criterion.md).
+We have used MSECriterion for our loss function. Since we are not intersted in backpropagation. One can find about this criterion [here](https://github.com/torch/nn/blob/master/doc/criterion.md).
 ```sh
 criterion = nn.MSECriterion() 
 ```
-Then we have used [optim] module.Here we will be using [optim.sgd].
+Since we are optimizing our model through Stochastic Gradient we have used module "optim.sgd". The tutorial link is [here][optim.sgd]
+```sh
+_, fs = optim.sgd(feval,x,sgd_params) 
+```
+The training set has been trained by "**step**" function.The code for it is simple and can be understood after going through the Turorials given above. We have used batches of **batch_size = 200** .
 
-After that comes "step" function which just train training set. We have used stochastic graident.So we have broken our trainingset into batches of size 200.The code is very simple. Any one can understand it by seeing it.
+**eval** function gives us accuracy calculated after testing validation set with the parameters we got after training trainingset in "**step**" function.
 
-Then we have "eval" function which gives us accuracy calculated after testing validation set with the parameters we got after training trainingset in "step" function.
+After iterating the same datasets for **200** times or (200 epochs) we have saved the final parameters of model in other file **model.net**. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_output.lua] and [graph_output.lua].
 
-After iterating the same datasets for 200 times we have saved the final parameters of model in other file model.net. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_ouput.lua] and [graph_output.lua].
+   ### Description of **[final_output.lua]** and **[graph_output.lua]**
+   The **final_ouput.lua** , as the name itself says, gives us the closing stock value when given value of opening , highest , lowest and overall volume of a stock of a day as an input.
+   
+   The **graph_ouput.lua** gives us the graph between the **predicted closing value** and **actual closing value** .It also save the graph in home directory as a .png file.
 
+### Contributors
+Team Name = [ML-Coderss](http://mlcoderss.github.io/ML-project/)
 
-Team Name = ML-Coderss
 Team Membres :
   * [Aditya Katara](https://www.facebook.com/aditya.katara.9?fref=ts)
   * [Palash Agarwal](https://www.facebook.com/palash.g.agrawal?fref=ts)
   * [Piyush Bansal](https://www.facebook.com/p.bansal.98?fref=ts)
   * [Saket Harsh](https://www.facebook.com/saket.harsh1?fref=ts)
 
-### Our deep Gratitude to
+### Credits
+  * [IIT Kanpur](http://iitk.ac.in/)
+  * [Pclub](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiQm5PR88_NAhUFTY8KHYaoCHYQFggdMAA&url=http%3A%2F%2Fpclub.in%2F&usg=AFQjCNEobwZBgd2l9kDqJbEbuK-vvc6KkA&cad=rja)
   * Our Pclub cordii = [Vinayak Tantia](https://www.facebook.com/vinayak.tantia?fref=nf)
   * Coursera Co-founder = [Andrew Ng]
-  * And to our respectable PARENTS who have been Our Overall Guide whole time.
+
+### Inspiration
 
 
+
+### Website
+Our website is : http://mlcoderss.github.io/ML-project/
 
 
 [//]: # 
@@ -111,6 +122,6 @@ Team Membres :
    [core_function.lua]: (https://github.com/MLcoderss/ML-project/blob/master/core_function.lua)
    [optim]: <https://github.com/torch/optim>
    [optim.sgd]: <http://torch.ch/docs/five-simple-examples.html#4-using-the-optim-package>
-   [final_ouput.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
+   [final_output.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
    [graph_output.lua]: <>
    
