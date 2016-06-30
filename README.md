@@ -38,7 +38,7 @@ In total we have five main files:
   * [graph_output.lua]
 
    ##### Dataset description
-   The Dataset has been cropped from other [data repository]  (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
+   The Dataset has been cropped from other [data repository] ,which contains more than one lakh stocks of one year. Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
    ```sh
    fullset = database("Dataset.txt")	.
 trainset = {
