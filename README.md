@@ -80,7 +80,7 @@ After that comes "step" function which just train training set. We have used sto
 
 Then we have "eval" function which gives us accuracy calculated after testing validation set with the parameters we got after training trainingset in "step" function.
 
-After iterating the same datasets for 200 times we have saved the final parameters of model in other file /model.net. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_ouput.lua] and [graph_output.lua].
+After iterating the same datasets for 200 times we have saved the final parameters of model in other file model.net. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_ouput.lua] and [graph_output.lua].
 
 
 
@@ -106,5 +106,5 @@ After iterating the same datasets for 200 times we have saved the final paramete
    [optim]: <https://github.com/torch/optim>
    [optim.sgd]: <http://torch.ch/docs/five-simple-examples.html#4-using-the-optim-package>
    [final_ouput.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
-   [graph_output.lua]: <>
+   
    
