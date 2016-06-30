@@ -53,7 +53,7 @@ Our data set has been imported from [Historical Stock Data].
    [Michael Nelson]: <http://michaelnielsen.org/>
    [rnduja blog]: <http://rnduja.github.io/2015/10/13/torch-mnist/>
    [here]: <https://github.com/MLcoderss/ML-project/blob/master/core_function.lua>
-   [Historical Stock Data]: <pages.swcp.com/stocks/>
+   [Historical Stock Data]: <http://pages.swcp.com/stocks/>
    
    
    
