@@ -1,9 +1,9 @@
 # Machine Learning Project
 ## Stock Market Predictor
-### Key Points :-
-   - The project has been made in summer 2016
-   - four students of IIT Kanpur under the guidance of programming club did it
-   - the project was aimed at learning the algorithms of machine learning.
+### Key Points :
+  - This project predicts the closing value of a stock in a market
+   - We, the students of IIT Kanpur , under the guidance of programming club coded it.
+   - The project was aimed at learning the algorithms of machine learning.
 
 Website of our project is :- http://mlcoderss.github.io/ML-project/
 
@@ -16,15 +16,15 @@ Our project aims to calculate the closing value of that day of a stock in stock 
    - It also shows the error variation on graph
    - u can also save the graph and the model parameters.
 
-#### Our aim of the project can be summarised as:-
+#### Our project in my eyes:-
 
 >We are a group of four people who learned machine learning from various sites and courses.
-> Finally our team was ready to make a project different from everbody,
-> so we finally ended to this project.
+> With the effort of everyone in the group we could give a shape to this Project.
+> Now we can proudly say that we have learnes machine learnin and used our summers fruitfully.
 
 We also thanks to coordinators of the Programming club, without them we would have not been able to do any thing. Now we also include our helpful sites and courses
 we learned from:-
-  * Respected [Andrew NG Sir] and his course on [Coursera]
+  * Respected [Andrew NG] Sir and his course on [Coursera]
   * Book for [neural networks] written by [Michael Nelson]
   * Python from http://learnpython.org/
   * Git from https://try.github.io/levels/1/challenges/1
@@ -83,18 +83,24 @@ Then we have "eval" function which gives us accuracy calculated after testing va
 After iterating the same datasets for 200 times we have saved the final parameters of model in other file model.net. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_ouput.lua] and [graph_output.lua].
 
 
+Team Name = ML-Coderss
+Team Membres :
+  * [Aditya Katara](https://www.facebook.com/aditya.katara.9?fref=ts)
+  * [Palash Agarwal](https://www.facebook.com/palash.g.agrawal?fref=ts)
+  * [Piyush Bansal](https://www.facebook.com/p.bansal.98?fref=ts)
+  * [Saket Harsh](https://www.facebook.com/saket.harsh1?fref=ts)
 
-
-
-
-
+### Our deep Gratitude to
+  * Our Pclub cordii = [Vinayak Tantia](https://www.facebook.com/vinayak.tantia?fref=nf)
+  * Coursera Co-founder = [Andrew Ng]
+  * And to our respectable PARENTS who have been Our Overall Guide whole time.
 
 
 
 
 [//]: # 
    [Torch]: <https://github.com/torch/torch7/wiki/Cheatsheet>
-   [Andrew NG Sir]: <https://www.coursera.org/instructor/andrewng>
+   [Andrew NG]: <https://www.coursera.org/instructor/andrewng>
    [Coursera]: <https://www.coursera.org/learn/machine-learning>
    [neural networks]: <http://neuralnetworksanddeeplearning.com/>
    [Michael Nelson]: <http://michaelnielsen.org/>
@@ -106,5 +112,5 @@ After iterating the same datasets for 200 times we have saved the final paramete
    [optim]: <https://github.com/torch/optim>
    [optim.sgd]: <http://torch.ch/docs/five-simple-examples.html#4-using-the-optim-package>
    [final_ouput.lua]: <https://github.com/MLcoderss/ML-project/blob/master/final_output.lua>
-   
+   [graph_output.lua]: <>
    
