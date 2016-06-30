@@ -34,7 +34,7 @@ we learned from:-
 
 ## **Description of the Project**
 We here will describe how our code works. Our main code can be found [here].
-Our data set has been imported from :- pages.swcp.com/stocks/
+Our data set has been imported from [Historical Stock Data].
 
 
 
@@ -53,6 +53,7 @@ Our data set has been imported from :- pages.swcp.com/stocks/
    [Michael Nelson]: <http://michaelnielsen.org/>
    [rnduja blog]: <http://rnduja.github.io/2015/10/13/torch-mnist/>
    [here]: <https://github.com/MLcoderss/ML-project/blob/master/core_function.lua>
+   [Historical Stock Data]: <pages.swcp.com/stocks/>
    
    
    
