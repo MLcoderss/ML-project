@@ -99,10 +99,10 @@ After iterating the same datasets for **200** times or (200 epochs) we have save
 Team Name = [ML-Coderss](http://mlcoderss.github.io/ML-project/)
 
 Team Membres :
-  * [Aditya Katara](https://www.facebook.com/aditya.katara.9?fref=ts)
-  * [Palash Agarwal](https://www.facebook.com/palash.g.agrawal?fref=ts)
-  * [Piyush Bansal](https://www.facebook.com/p.bansal.98?fref=ts)
-  * [Saket Harsh](https://www.facebook.com/saket.harsh1?fref=ts)
+  * [Aditya Katara](https://github.com/adityakt)
+  * [Palash Agarwal](https://github.com/agpalash)
+  * [Piyush Bansal](https://github.com/piushbansal)
+  * [Saket Harsh](https://github.com/sharsh56625)
 
 ### Credits
   * [IIT Kanpur](http://iitk.ac.in/)
