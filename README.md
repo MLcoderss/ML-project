@@ -46,7 +46,7 @@ Our data set has been imported from [Historical Stock Data].
 
 
 [//]: # 
-   [Torch]: <http://dillinger.io/>
+   [Torch]: <https://github.com/torch/torch7/wiki/Cheatsheet>
    [Andrew NG Sir]: <https://www.coursera.org/instructor/andrewng>
    [Coursera]: <https://www.coursera.org/learn/machine-learning>
    [neural networks]: <http://neuralnetworksanddeeplearning.com/>
