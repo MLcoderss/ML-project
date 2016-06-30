@@ -3,10 +3,10 @@
 ### Summarised Description
 >This Project predicts closing value of a stock of a particular day in a market, given its value of opening, maximum, minimum and volume of a stock of that day.
 * The project has been coded in Torch.
-* This project implements the basic algorithms of machine learning
+* This project implements the basic algorithms of machine learning.
 
 ### Installation of Torch
-This project uses Torch , a language particularly for Machine Learning. Torch can be installed easily on linux from terminal. It can't work on windows.
+This project uses Torch , a language particularly made for Machine Learning. Torch can be installed easily on linux from its terminal. It can not installed on windows.
 
 * Link for installation guide:- http://torch.ch/docs/getting-started.html
 
@@ -20,7 +20,7 @@ $ luarocks install optim
 Also Dataset needed to build the project can be found [here](http://pages.swcp.com/stocks/).
 
 ### Helpful Tutorials , Books and Links
-Here is the name and links of important persons and other important stuffs.
+Here is the name and links of important persons and important stuffs.
   * Respected [Andrew NG] Sir and his course on [Coursera]
   * Book for [neural networks] written by [Michael Nelson]
   * Python from http://learnpython.org/
@@ -28,6 +28,7 @@ Here is the name and links of important persons and other important stuffs.
   * Torch from https://github.com/torch/torch7/wiki/Cheatsheet
   * Lua from http://tylerneylon.com/a/learn-lua/
   * Machine learning In Torch from [rnduja blog]
+
 ### Description
 In total we have five main files:
   * [core_function.lua]
@@ -37,7 +38,7 @@ In total we have five main files:
   * [graph_output.lua]
 
    ##### Dataset description
-   The Dataset has been cropped from other [data repository] (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
+   The Dataset has been cropped from other [data repository]  (which contains more than one lakh stocks of one year). Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
    ```sh
    fullset = database("Dataset.txt")	.
 trainset = {
@@ -81,10 +82,10 @@ The training set has been trained by "**step**" function.The code for it is simp
 
 After iterating the same datasets for **200** times or (200 epochs) we have saved the final parameters of model in other file **model.net**. This helps us to use these parameters any other time without iterating over 200 times. This file has been used in files like [final_output.lua] and [graph_output.lua].
 
-   ### Description of **[final_output.lua]** and **[graph_output.lua]**
-   The **final_ouput.lua** , as the name itself says, gives us the closing stock value when given value of opening , highest , lowest and overall volume of a stock of a day as an input.
+#### Description of **[final_output.lua]** and **[graph_output.lua]**
+  The **final_ouput.lua** , as the name itself says, gives us the closing stock value when given value of opening , highest , lowest and overall volume of a stock of a day as an input.
    
-   The **graph_ouput.lua** gives us the graph between the **predicted closing value** and **actual closing value** .It also save the graph in home directory as a .png file.
+  The **graph_ouput.lua** gives us the graph between the **predicted closing value** and **actual closing value** .It also save the graph in home directory as a .png file.
 
 ### Contributors
 Team Name = [ML-Coderss](http://mlcoderss.github.io/ML-project/)
@@ -100,10 +101,6 @@ Team Membres :
   * [Pclub](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiQm5PR88_NAhUFTY8KHYaoCHYQFggdMAA&url=http%3A%2F%2Fpclub.in%2F&usg=AFQjCNEobwZBgd2l9kDqJbEbuK-vvc6KkA&cad=rja)
   * Our Pclub cordii = [Vinayak Tantia](https://www.facebook.com/vinayak.tantia?fref=nf)
   * Coursera Co-founder = [Andrew Ng]
-
-### Inspiration
-
-
 
 ### Website
 Our website is : http://mlcoderss.github.io/ML-project/
