@@ -1,3 +1,21 @@
+---
+layout: post
+title: "Stock Prediction"
+date: 2017-01-22 16:00:00 +0530
+author: saketharsh
+website: http://mlcoderss.github.io/ML-project/
+category: Project
+tags:
+- summer16
+- project
+- ML
+categories:
+- project
+
+
+---
+
+
 # Machine learning Project
 ## Stock Market Predictor
 ### Summarised Description
