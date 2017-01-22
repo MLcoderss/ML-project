@@ -2,11 +2,11 @@
 ## Stock Market Predictor
 ### Summarised Description
 >This Project predicts closing value of a stock of a particular day in a market, given its value of opening, maximum, minimum and volume of a stock of that day.
-* The project has been coded in Torch.
-* This project implements the basic algorithms of machine learning.
+* The entire code has been written in Torch and Lua
+* This project implements the basic algorithms of Machine Learning.
 
 ### Installation of Torch
-This project uses Torch , a language particularly made for Machine Learning. Torch can be installed easily on linux from its terminal. It can not installed on windows.
+This project uses Torch , a language particularly made for Machine Learning. Torch can be installed easily on linux from its terminal. I
 
 * Link for installation guide:- http://torch.ch/docs/getting-started.html
 
@@ -17,12 +17,12 @@ $ luarocks install itorch
 $ luarocks install image
 $ luarocks install optim
 ```
-Also Dataset needed to build the project can be found [here](http://pages.swcp.com/stocks/).
+The Data Set used for training the Neural Network can be found here. [here](http://pages.swcp.com/stocks/).
 
-### Helpful Tutorials , Books and Links
+### Tutorials, Books and Links that we used
 Here is the name and links of important persons and important stuffs.
-  * Respected [Andrew NG] Sir and his course on [Coursera]
-  * Book for [neural networks] written by [Michael Nelson]
+  *  [Andrew NG] course on Machine Learning present at [Coursera]
+  * Book for [Neural Networks] written by [Michael Nelson]
   * Python from http://learnpython.org/
   * Git from https://try.github.io/levels/1/challenges/1
   * Torch from https://github.com/torch/torch7/wiki/Cheatsheet
@@ -33,12 +33,12 @@ Here is the name and links of important persons and important stuffs.
 In total we have five main files:
   * [core_function.lua]
   * [stock_function.lua]
-  * [Dataset.txt] which contains 20,232 different stocks
+  * [Dataset.txt] which contains 20,232 data of stock details of various MNC's
   * [final_output.lua]
   * [graph_output.lua]
 
    ##### Dataset description
-   The Dataset has been cropped from other [data repository] ,which contains more than one lakh stocks of one year. Our dataset just contains 20,232 stocks of which 10,232 has been used as trainingset and remaining as validationset. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
+   The Dataset has been taken from other [data repository] ,which contains more than one lakh stocks of one year. Our dataset just contains 20,232 stocks of which 10,232 has been used as Training Set and remaining as Validation Set. We have ignored dates and tickers as they are not useful for us to calculate our desired output. One can see how we have done it in [stock_function.lua].
    ```sh
    fullset = database("Dataset.txt")	.
 trainset = {
@@ -68,7 +68,7 @@ validationset = {
    This model applies [Tanh](https://github.com/torch/nn/blob/master/doc/transfer.md#tanh) function. 
    Tanh is defined as f(x) = (exp(x)-exp(-x))/(exp(x)+exp(-x))
 
-We have used MSECriterion for our loss function. Since we are not intersted in backpropagation. One can find about this criterion [here](https://github.com/torch/nn/blob/master/doc/criterion.md).
+We have used MSECriterion(Mean Squared Error) for our loss function. Since we are not intersted in backpropagation. One can find about this criterion [here](https://github.com/torch/nn/blob/master/doc/criterion.md).
 ```sh
 criterion = nn.MSECriterion() 
 ```
@@ -107,8 +107,8 @@ Team Membres :
 ### Credits
   * [IIT Kanpur](http://iitk.ac.in/)
   * [Pclub](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiQm5PR88_NAhUFTY8KHYaoCHYQFggdMAA&url=http%3A%2F%2Fpclub.in%2F&usg=AFQjCNEobwZBgd2l9kDqJbEbuK-vvc6KkA&cad=rja)
-  * Our Pclub cordii = [Vinayak Tantia](https://www.facebook.com/vinayak.tantia?fref=nf)
-  * Coursera Co-founder = [Andrew Ng]
+  * P Club Co-ordinator - [Vinayak Tantia]
+  * Coursera Co-founder - [Andrew Ng]
 
 ### Website
 Our website is : http://mlcoderss.github.io/ML-project/
